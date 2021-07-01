@@ -3,7 +3,7 @@ Database Universitario
 ## Studenti
 - Nome                                  VARCHAR 30 NOTNULL
 - Cognome                               VARCHAR 60 NOTNULL
-- ID                                    SMALLINT UNIQUE NOTNULL
+- badge_ID                              SMALLINT UNIQUE NOTNULL PRIMARY
 - Anno di immatricolazione              TIMESTAMP(YYYY/YYYY) NOTNULL
 - Facoltà                               VARCHAR 120 NOTNULL
 - Dipartimento                          VARCHAR 120
@@ -21,7 +21,7 @@ Database Universitario
 - Coordinatore                          VARCHAR 90
 
 ## Insegnamenti
-- ID                                    SMALLINT 10 NOTNULL
+- insegnamento_ID                       SMALLINT 10 NOTNULL PRIMARY
 - Nome                                  VARCHAR 100
 - Periodo                               TIMESTAMP(YYYY/YYYY) NOTNULL
 - Descrizione                           TEXT
