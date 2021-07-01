@@ -10,6 +10,17 @@ Database Universitario
 - In corso                              TINYINT NOTNULL
 - Esami sostenuti                       SMALLINT
 - Esami programmati                     SMALLINT
+
+## Esami sostenuti
+- Data                                  DATE
+- Votazione                             TINYINT
+- Passato                               TINYINT
+- Insegnamento                          SMALLINT 10 NOTNULL PRIMARY
+- Anno Accademico                       TIMESTAMP(YYYY/YYYY) NOTNULL
+## Esami programmati
+- Data                                  DATE
+- Insegnamento                          SMALLINT 10 NOTNULL PRIMARY
+- Anno Accademico                       TIMESTAMP(YYYY/YYYY) NOTNULL
 ## Corso di laurea
 - Nome                                  VARCHAR 90 NOTNULL
 - Tipo di corso                         VARCHAR 90
