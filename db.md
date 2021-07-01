@@ -22,6 +22,7 @@ Database Universitario
 - Insegnamento                          SMALLINT 10 NOTNULL PRIMARY
 - Anno Accademico                       TIMESTAMP(YYYY/YYYY) NOTNULL
 ## Corso di laurea
+- corso_ID                              SMALLINT 20 NOTNULL PRIMARY
 - Nome                                  VARCHAR 90 NOTNULL
 - Tipo di corso                         VARCHAR 90
 - Sede                                  VARCHAR 120
