@@ -1,36 +1,30 @@
-asd
+Database Universitario
 ===
-## Didattica
-- Laurea triennale
-- Laurea magistrale
-- Master
-- Dottorato di ricerca
-- Scuola di specializzazione
 ## Studenti
-- Nome
-- Cognome
-- ID
-- Anno di immatricolazione
-- Facoltà
-- Dipartimento
-- In corso
-- Esami sostenuti
-- Esami programmati
+- Nome                                  VARCHAR 30 NOTNULL
+- Cognome                               VARCHAR 60 NOTNULL
+- ID                                    SMALLINT UNIQUE NOTNULL
+- Anno di immatricolazione              TIMESTAMP(YYYY/YYYY) NOTNULL
+- Facoltà                               VARCHAR 120 NOTNULL
+- Dipartimento                          VARCHAR 120
+- In corso                              TINYINT NOTNULL
+- Esami sostenuti                       SMALLINT
+- Esami programmati                     SMALLINT
 ## Corso di laurea
-- Tipo di corso
-- Sede
-- Descrizione
-- Sbocchi lavorativi
-- Tipo di accesso
-- Classe di corso
-- Insegnamenti
-- Coordinatore
+- Nome                                  VARCHAR 90 NOTNULL
+- Tipo di corso                         VARCHAR 90
+- Sede                                  VARCHAR 120
+- Descrizione                           TEXT
+- Sbocchi lavorativi                    TEXT
+- Tipo di accesso                       VARCHAR 30
+- Classe di corso                       VARCHAR 60
+- Coordinatore                          VARCHAR 90
 
 ## Insegnamenti
-- ID
-- Nome
-- Periodo
-- Descrizione
-- SSD
-- CFU
-- Appello programmato
+- ID                                    SMALLINT 10 NOTNULL
+- Nome                                  VARCHAR 100
+- Periodo                               TIMESTAMP(YYYY/YYYY) NOTNULL
+- Descrizione                           TEXT
+- SSD                                   VARCHAR 20
+- CFU                                   TINYINT
+- Appello programmato                   TINYINT
