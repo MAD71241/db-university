@@ -12,12 +12,14 @@ Database Universitario
 - Esami programmati                     SMALLINT
 
 ## Esami sostenuti
+- ID                                    SMALLINT UNIQUE NOTNULL PRIMARY
 - Data                                  DATE
 - Votazione                             TINYINT
 - Passato                               TINYINT
 - Insegnamento                          SMALLINT 10 NOTNULL PRIMARY
 - Anno Accademico                       TIMESTAMP(YYYY/YYYY) NOTNULL
 ## Esami programmati
+- ID                                    SMALLINT UNIQUE NOTNULL PRIMARY
 - Data                                  DATE
 - Insegnamento                          SMALLINT 10 NOTNULL PRIMARY
 - Anno Accademico                       TIMESTAMP(YYYY/YYYY) NOTNULL
