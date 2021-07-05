@@ -52,8 +52,13 @@ Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono
 ????
 
 Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
-
-????
+SELECT *
+FROM degrees
+JOIN courses
+ON courses.degree_id = degrees.id  
+JOIN course_teacher
+ON courses.id = course_teacher.course_id
+ORDER BY `degrees`.`department_id` ASC, `courses`.`degree_id` ASC
 
 Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
 SELECT DISTINCT(teacher_id)
