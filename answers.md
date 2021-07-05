@@ -12,4 +12,6 @@ SELECT * FROM `exams` WHERE `hour`> "14:00:00" AND `date` = "2020-06-20"
 
 SELECT * FROM `degrees` WHERE `level` = "magistrale"
 
+SELECT * FROM `departments`
+
 SELECT * FROM `teachers` WHERE `phone` IS NOT NULL
