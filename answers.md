@@ -62,10 +62,15 @@ WHERE course_teacher.teacher_id = 44
 
 Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
-????
+SELECT students.surname, students.name, degrees.name as degree_name, degrees.level, departments.name as departments_name
+FROM students
+JOIN degrees
+ON students.degree_id = degrees.id
+JOIN departments
+ON degrees.department_id = departments.id
 
 Selezionare tutti i corsi di laurea con i relativi corsi e insegnanti
-SELECT *
+SELECT degrees.name as degree_name, courses.name as course_name, course_teacher.teacher_id
 FROM degrees
 JOIN courses
 ON courses.degree_id = degrees.id  
@@ -74,13 +79,12 @@ ON courses.id = course_teacher.course_id
 ORDER BY `degrees`.`department_id` ASC, `courses`.`degree_id` ASC
 
 Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
-SELECT DISTINCT(teacher_id)
-FROM courses 
-JOIN course_teacher
-ON courses.id = course_teacher.course_id
-WHERE courses.degree_id = 28 
-OR courses.degree_id = 29 
-OR courses.degree_id = 30 
-OR courses.degree_id = 31
+SELECT departments.name as department_name, departments.address as department_address, teachers.name as teacher_name, teachers.surname as teacher_surname
+FROM departments
+JOIN degrees ON degrees.department.id = department.id
+JOIN courses ON degrees.id = courses.degree_id
+JOIN course_teacher ON course.id = course_teacger.course_id
+JOIN teachers ON course_teacher.teacher_id = teachers.id
+WHERE departments.name = `Dipartimento di Matematica`
 
 BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
