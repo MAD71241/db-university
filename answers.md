@@ -19,13 +19,24 @@ SELECT * FROM `teachers` WHERE `phone` IS NOT NULL
 ## risposte esercitazione 05/07/21
 
 Quanti iscritti ci sono stati ogni anno?
-SELECT COUNT(id), enrolment_date FROM students GROUP BY enrolment_date
+SELECT COUNT(id), YEAR(enrolment_date) 
+FROM students 
+GROUP BY enrolment_date
 
 Quanti insegnanti hanno l'ufficio nello stesso edificio?
-SELECT COUNT(id), office_address FROM teachers GROUP BY office_address
+SELECT COUNT(id), office_address 
+FROM teachers 
+GROUP BY office_address
+
+Media voto per ogni esame
+SELECT AVG(vote) AS "media_voti", exam_id
+FROM exam_student
+GROUP BY exam_id
 
 Contare quanti corsi di laurea ci sono per ogni dipartimento
-SELECT COUNT(id), department_id FROM degrees GROUP BY department_id
+SELECT COUNT(id) AS numero_corsi,  department_id 
+FROM degrees 
+GROUP BY department_id
 
 --
 
@@ -45,7 +56,9 @@ Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze
 
 
 Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
-SELECT * FROM `course_teacher` WHERE course_teacher.teacher_id = 44
+SELECT * 
+FROM `course_teacher` 
+WHERE course_teacher.teacher_id = 44
 
 Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
