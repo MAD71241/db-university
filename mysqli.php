@@ -1,17 +1,16 @@
 <?php
 
-define("DB_SERVERNAME", "local_server");
-define("DB_USERNAME", "my_user");
-define("DB_PASSWORD", "my_password");
+define("DB_HOST", "localhost");
+define("DB_USERNAME", "root");
+define("DB_PASSWORD", "");
 define("DB_NAME", "university");
 
-$connection = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_PASSWORD);
-
-var_dump($connection);
+$connection = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 //check for connection errors
 if ($connection && $connection->connect_error) {
     echo "Connection Failed! Error n° " .$connection->connect_errno ." " .$connection->connect_error;
+    die();
 }
-
+echo "Connection succesfull";
 ?>
